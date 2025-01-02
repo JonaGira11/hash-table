@@ -70,6 +70,7 @@ values(){
                 valueArr.push(this.keyMap[i][j][1])
             }
         }
+        return valueArr;
     }
 }
 
