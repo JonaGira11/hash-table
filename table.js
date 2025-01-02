@@ -15,7 +15,7 @@ console.log(hash('cyan',10))
 
 // new hash that works with constant time and more random
 
-function hash(key, arrayLength){
+/* function hash(key, arrayLength){
     let total = 0;
     let PRIME_NUM = 31;
     for(let i = 0; i < Math.min(key.lenght, 100); i ++) {
@@ -24,4 +24,22 @@ function hash(key, arrayLength){
         total = (total * PRIME_NUM + value) % arrayLength;
     }
     return total;
+} */
+
+// dealing with collisions hash table code 
+
+class HashTable {
+    constructor(size = 53){
+        this.kepMap = new Array(size) ;
+      }
+      hash(key, arrayLength){
+        let total = 0;
+        let PRIME_NUM = 31;
+        for(let i = 0; i < Math.min(key.lenght, 100); i ++) {
+            let char = key[i];
+            let value = char.charCodeAt(0)-96
+            total = (total * PRIME_NUM + value) % arrayLength;
+        }
+        return total;
+    }
 }
