@@ -32,13 +32,13 @@ class HashTable {
     constructor(size = 53){
         this.kepMap = new Array(size) ;
       }
-      hash(key, arrayLength){
+      hash(key){
         let total = 0;
         let PRIME_NUM = 31;
         for(let i = 0; i < Math.min(key.lenght, 100); i ++) {
             let char = key[i];
             let value = char.charCodeAt(0)-96
-            total = (total * PRIME_NUM + value) % arrayLength;
+            total = (total * PRIME_NUM + value) % this.kepMap.length;
         }
         return total;
     }
