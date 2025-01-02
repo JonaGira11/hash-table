@@ -62,6 +62,16 @@ if(this.keyMap[index]){
 }
     return undefined
 }
+values(){
+    let valueArr =[];
+    for(let i = 0; i, this.keyMap.length; i ++){
+        if(this.keyMap[i]){
+            for(let j = 0; j < this.keyMap[i].length; j++){
+                valueArr.push(this.keyMap[i][j][1])
+            }
+        }
+    }
+}
 
 
 }
