@@ -30,9 +30,9 @@ console.log(hash('cyan',10))
 
 class HashTable {
     constructor(size = 53){
-        this.kepMap = new Array(size) ;
+        this.keyMap = new Array(size) ;
       }
-      hash(key){
+      _hash(key){
         let total = 0;
         let PRIME_NUM = 31;
         for(let i = 0; i < Math.min(key.lenght, 100); i ++) {
@@ -42,4 +42,13 @@ class HashTable {
         }
         return total;
     }
+    set(key,value){
+       let index = this._hash(key)
+        if(!this.keyMap[index ]){
+            this.keyMap[index] = [];
+        }
+        this.keyMap[index].push([key,value]);
+    }
+
+
 }
